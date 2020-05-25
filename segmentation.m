@@ -1,7 +1,7 @@
 close all;
 clear all;
 
-img = rgb2gray(imread("Dataset/train/card_20.JPG"));
+img = rgb2gray(imread("Dataset/train/card_40.JPG"));
 
 % detect card 
 [counts,x] = imhist(img,17);
@@ -90,3 +90,13 @@ end
 figure;
 cropped = imresize(cropped,300/max(size(cropped)));
 imshow(cropped);
+
+topRegion = cropped(1:80,1:40);
+figure;
+imshow(topRegion);
+
+botRegion = cropped(end-79:end,end-39:end);
+botRegion = flip(botRegion,1);
+botRegion = flip(botRegion,2);
+figure;
+imshow(botRegion);
