@@ -43,9 +43,11 @@ for k = 1:N
         end
     end 
 end
+hold off;
 figure;
 cropped = imresize(cropped,300/max(size(cropped)));
 imshow(cropped);
+hold on;
 
 [counts,x] = imhist(cropped,16);
 T = otsuthresh(counts);
@@ -69,9 +71,11 @@ for k = 1:N
         degBot = calAngle( [botCol botRow] , [rightCol rightRow] , [leftCol leftRow] ); 
         degLeft = calAngle( [leftCol leftRow] , [botCol botRow] , [topCol topRow]  ); 
         degRight = calAngle( [rightCol rightRow] , [topCol topRow] , [botCol botRow] ); 
+        plot(topCol,topRow,'r*');
+        plot(botCol,botRow,'r*');
+        plot(leftCol,leftRow,'r*');
+        plot(rightCol,rightRow,'r*');
         break;
     end 
 end
-figure;
-imshow(edge(cropped,'canny'));
 % imhist(img);
