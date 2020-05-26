@@ -1,7 +1,7 @@
 close all;
 clear all;
 
-card_ori = findCard('card_16');
+card_ori = findCard('card_15');
 
 card = preprocessCard(card_ori);
 

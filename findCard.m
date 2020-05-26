@@ -31,6 +31,7 @@ function card = findCard(filename)
             end 
             if n_child > 1
                 card = parent;
+                break;
             end
         end 
     end
